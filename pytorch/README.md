@@ -1,7 +1,7 @@
 # cjz docker
 ```
 chmod -R 755 context/
-docker build -t c00cjz00/cuda:11.8.0-cudnn8-devel-ubuntu22.04 .
+docker build -t c00cjz00/pytorch:2.1.2-cuda11.8-cudnn8-devel .
 docker push
 ```
 # cjz singularity 
