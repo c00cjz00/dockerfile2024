@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
-FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04 
-#FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+#FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04 
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
 LABEL maintainer="summerhill001@gmail.com"
 
 # ignore interaction
@@ -39,5 +39,6 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 # run entrypoint.sh
-ENTRYPOINT [ "/opt/docker/context/entrypoint/entrypoint.sh" ]
-CMD [ "/bin/bash" ]
+#ENTRYPOINT [ "/opt/docker/context/entrypoint/entrypoint.sh" ]
+#CMD [ "/bin/bash" ]
+ENTRYPOINT [ "sleep", "infinity" ]

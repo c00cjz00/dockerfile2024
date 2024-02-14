@@ -42,5 +42,6 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 # run entrypoint.sh
-ENTRYPOINT [ "/opt/docker/context/entrypoint/entrypoint.sh" ]
-CMD [ "/bin/bash" ]
+#ENTRYPOINT [ "/opt/docker/context/entrypoint/entrypoint.sh" ]
+#CMD [ "/bin/bash" ]
+ENTRYPOINT [ "sleep", "infinity" ]
