@@ -14,8 +14,7 @@ git
 unzip
 htop
 net-tools
-#cjz
-nohup
+coreutils
 joe
 libopencv-dev
 python3-opencv
