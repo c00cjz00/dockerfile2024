@@ -19,11 +19,10 @@ rm get-pip.py
 #update-alternatives --install /usr/bin/python python /usr/bin/python3.8  3
 #update-alternatives --install /usr/bin/python python /usr/bin/python3.9  2
 #update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
-rm /usr/bin/python && rm /usr/bin/python3 && cp /usr/bin/python3.10 /usr/bin/python && ln -s /usr/bin/python /usr/bin/python3 
+cp /usr/bin/python3.10 /usr/bin/python && cp /usr/bin/python3.10 /usr/bin/python3
 
 # set pip3.10 to default
-rm /usr/local/bin/pip
 #update-alternatives --install /usr/local/bin/pip pip /usr/local/bin/pip3.8  3
 #update-alternatives --install /usr/local/bin/pip pip /usr/local/bin/pip3.9  2
 #update-alternatives --install /usr/local/bin/pip pip /usr/local/bin/pip3.10 1
-rm /usr/local/bin/pip && rm /usr/local/bin/pip3 && cp /usr/local/bin/pip3.10 /usr/local/bin/pip  && ln -s /usr/local/bin/pip /usr/local/bin/pip3
+cp /usr/local/bin/pip3.10 /usr/local/bin/pip  && cp /usr/local/bin/pip3.10 /usr/local/bin/pip3
