@@ -10,6 +10,8 @@ ubuntu-drivers-common
 build-essential
 vim
 git
+git-lfs
+joe
 unzip
 htop
 net-tools

@@ -1,3 +1,20 @@
+# cjz update
+```
+sudo vi /etc/apt/sources.list
+1
+添加高版本的源
+deb http://th.archive.ubuntu.com/ubuntu jammy main    #添加该行到文件
+1
+运行升级
+sudo apt update
+sudo apt install libc6
+1
+2
+查看结果
+
+strings /lib/x86_64-linux-gnu/libc.so.6 |grep GLIBC_
+```
+
 # cjz docker
 ```
 chmod -R 755 context/

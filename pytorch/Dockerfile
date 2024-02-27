@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 #FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04 
 #FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
-#FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-devel
-FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-runtime
+FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-devel
+#FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-runtime
 
 LABEL maintainer="summerhill001@gmail.com"
 
