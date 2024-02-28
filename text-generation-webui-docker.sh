@@ -12,6 +12,29 @@ pip install -r requirements.txt -U
 > import torch
 > torch.version.cuda
 
+# fix ~/pyvenv.cfg:/venv/pyvenv.cfg
+-> include-system-site-packages = true
+
+
 docker commit textgen c00cjz00/c00cjz00_cuda11.8_text-generation-webui:snapshot-2024-02-25
 
 docker push c00cjz00/c00cjz00_cuda11.8_text-generation-webui:snapshot-2024-02-25
+
+
+### cuda version
+docker run --name demo -d  c00cjz00/c00cjz00_cuda11.8_pytorch:2.1.2-cuda11.8-cudnn8-runtime
+docker exec -it demo bash
+
+
+BRANCH="snapshot-2023-12-10"
+REPOSRC=https://github.com/oobabooga/text-generation-webui.git
+LOCALREP=/app
+git clone --branch $BRANCH $REPOSRC $LOCALREP
+cd $LOCALREP
+cp requirements.txt requirements.txt.BACKUP
+pip install -r requirements.txt -U
+pip install hqq 
+
+
+docker commit demo  c00cjz00/c00cjz00_cuda11.8_text-generation-webui:snapshot-2023-12-10
+
