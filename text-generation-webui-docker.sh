@@ -32,7 +32,12 @@ LOCALREP=/app
 git clone --branch $BRANCH $REPOSRC $LOCALREP
 cd $LOCALREP
 cp requirements.txt requirements.txt.BACKUP
+sed -i 's@cu121@cu118@g' requirements.txt
+sed -i 's@cu122@cu118@g' requirements.txt
+
 pip install -r requirements.txt -U
+pip install -r extensions/openai/requirements.txt -U
+
 pip install hqq 
 
 
