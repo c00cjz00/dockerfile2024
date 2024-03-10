@@ -1,0 +1,66 @@
+# cjz update
+```
+sudo vi /etc/apt/sources.list
+1
+添加高版本的源
+deb http://th.archive.ubuntu.com/ubuntu jammy main    #添加该行到文件
+1
+运行升级
+sudo apt update
+sudo apt install libc6
+1
+2
+查看结果
+
+strings /lib/x86_64-linux-gnu/libc.so.6 |grep GLIBC_
+```
+
+# cjz docker
+```
+chmod -R 755 context/
+docker build -t c00cjz00/pytorch:2.1.2-cuda11.8-cudnn8-devel .
+docker push
+```
+# cjz singularity 
+```
+singularity pull docker://c00cjz00/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+```
+
+# Prepared CUDA based Image for Machine Learning Project
+- **GitHub**: [alchemine/base-cuda](https://github.com/alchemine/base-cuda)
+- **DockerHub**: [alchemine/base-cuda](https://hub.docker.com/repository/docker/alchemine/base-cuda)
+```
+$ docker pull alchemine/base-cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+```
+
+
+# 1. Base Image
+[`nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04`](https://hub.docker.com/r/nvidia/cuda/tags)
+
+
+# 2. Installed Library
+1. Python 3.8, 3.9, 3.10 (default: 3.8)
+   - `update-alternatives --config python`
+   - `update-alternatives --config pip`
+2. apt packages
+   - [context/utils/requirements.apt](https://github.com/alchemine/base-cuda/blob/11.8.0-cudnn8-runtime-ubuntu22.04/context/utils/requirements.apt)
+   - [context/extension/requirements.apt](https://github.com/alchemine/base-cuda/blob/11.8.0-cudnn8-runtime-ubuntu22.04/context/extension/requirements.apt)
+3. Poetry (1.7.1)
+   - [context/utils/install_poetry.sh](https://github.com/alchemine/base-cuda/blob/11.8.0-cudnn8-runtime-ubuntu22.04/context/utils/install_poetry.sh) 
+4. Java (1.8.0_382)
+   - [context/utils/install_java.sh](https://github.com/alchemine/base-cuda/blob/11.8.0-cudnn8-runtime-ubuntu22.04/context/utils/install_java.sh) 
+
+
+# 3. Usage
+## 3.1 Project Sample
+[alchemine/base-project](https://github.com/alchemine/base-project)
+
+## 3.2 `docker run`
+- [run.sh](https://github.com/alchemine/base-cuda/blob/11.8.0-cudnn8-runtime-ubuntu22.04/run.sh)
+
+## 3.3 `docker-compose`
+- [docker-compose.yaml](https://github.com/alchemine/base-cuda/blob/11.8.0-cudnn8-runtime-ubuntu22.04/docker-compose.yaml)
+
+
+# 4. Dockerfile
+- [Dockerfile](https://github.com/alchemine/base-cuda/blob/11.8.0-cudnn8-runtime-ubuntu22.04/Dockerfile)
