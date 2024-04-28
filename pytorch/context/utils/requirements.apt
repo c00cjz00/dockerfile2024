@@ -15,3 +15,11 @@ joe
 unzip
 htop
 net-tools
+jq
+poppler-utils
+tesseract-ocr
+poppler-data
+libaio1
+libfontconfig
+libaio-dev
+libibverbs-dev
